@@ -6,7 +6,7 @@ func _enter_tree():
 
 
 func _ready():
-    global_position = Vector2(randi() % 1000 + 50, randi() % 500 + 50)
+    position = Vector2(randi() % 1000 + 50, randi() % 500 + 50)
 
 
 func _process(_delta):
