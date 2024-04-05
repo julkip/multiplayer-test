@@ -23,6 +23,11 @@ func _on_host_pressed():
 
 
 func add_player(id: int = 1):
+    if not multiplayer.is_server():
+        return
+    if has_node(str(id)):
+        print("A player with ID", id, "already exists.")
+        return
     var player = player_scene.instantiate()
     player.name = str(id)
     call_deferred("add_child", player)
